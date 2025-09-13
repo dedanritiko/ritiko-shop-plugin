@@ -1,0 +1,47 @@
+{% load i18n %}
+<div class="card shadow-sm h-100">
+    <div class="card-header bg-success text-white">
+        <h6 class="card-title mb-0">
+        <h6 class="card-title mb-0">
+            <i class="fas fa-shopping-cart mr-2"></i>
+            {% trans "Sales Dashboard" %}
+        </h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="text-center">
+                    <h3 class="text-success">${{ total_sales|floatformat:2 }}</h3>
+                    <small class="text-muted">{% trans "Total Sales" %}</small>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="text-center">
+                    <h3 class="text-primary">{{ orders_today }}</h3>
+                    <small class="text-muted">{% trans "Orders Today" %}</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="text-center">
+                    <h4 class="text-warning">{{ pending_orders }}</h4>
+                    <small class="text-muted">{% trans "Pending Orders" %}</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <small class="text-muted">
+                        {% trans "Recent:" %}<br>
+                        {{ recent_order }}
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <a href="#" class="btn btn-outline-success btn-sm">
+                {% trans "View Orders" %}
+            </a>
+        </div>
+    </div>
+</div>

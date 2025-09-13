@@ -1,0 +1,23 @@
+{
+  "author": "Ritiko Development Team",
+  "categories": [
+    "ecommerce",
+    "business"
+  ],
+  "dependencies": [],
+  "description": "E-commerce plugin providing shopping cart, inventory management, and sales functionality",
+  "django_apps": [
+    "plugins.shop_plugin"
+  ],
+  "email": "dev@ritiko.com",
+  "enabled": true,
+  "name": "Shop Plugin",
+  "tags": [
+    "shop",
+    "ecommerce",
+    "sales",
+    "inventory"
+  ],
+  "url": "https://github.com/ritiko/ritiko-py",
+  "version": "1.0.0"
+}

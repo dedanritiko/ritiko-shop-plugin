@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="card shadow-sm border-warning">
+    <div class="card-header bg-warning text-dark">
+        <h6 class="card-title mb-0">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            {% trans "Inventory Alerts" %}
+            {% if total_alerts %}
+                <span class="badge badge-danger">{{ total_alerts }}</span>
+            {% endif %}
+        </h6>
+    </div>
+    <div class="card-body">
+        {% if low_stock_items %}
+            <div class="list-group list-group-flush">
+                {% for item in low_stock_items %}
+                    <div class="list-group-item px-0 py-2 d-flex justify-content-between align-items-center">
+                        <span>{{ item.name }}</span>
+                        <span class="badge {% if item.stock == 0 %}badge-danger{% else %}badge-warning{% endif %}">
+                            {% if item.stock == 0 %}
+                                {% trans "Out of Stock" %}
+                            {% else %}
+                                {{ item.stock }} {% trans "left" %}
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="mt-3">
+                <a href="#" class="btn btn-outline-warning btn-sm">
+                    {% trans "Manage Inventory" %}
+                </a>
+            </div>
+        {% else %}
+            <p class="text-success mb-0">
+                <i class="fas fa-check-circle mr-1"></i>
+                {% trans "All inventory levels are healthy." %}
+            </p>
+        {% endif %}
+    </div>
+</div>
